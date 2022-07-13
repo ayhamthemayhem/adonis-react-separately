@@ -26,9 +26,15 @@ Route.get('/', async () => {
 })
 
 Route.post('/file', async ({ request }) => {
-  const uploadedFile = request.file('file_upload')
-
-  if (uploadedFile) {
-    await uploadedFile.move(Application.tmpPath('uploads'))
+  try {
+    const uploadedFile = request.file('file_upload')
+    if (uploadedFile) {
+      await uploadedFile.move(Application.tmpPath('uploads'))
+    }
+    return { success: true }
+  } catch (error) {
+    console.log(error)
+    return { success: false }
   }
+
 })
