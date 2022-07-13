@@ -1,0 +1,29 @@
+# Frontend Folders
+/frontend/node_modules
+/frontend/build
+/frontend/coverage
+
+# Frontend misc
+/frontend/.env
+/frontend/.vscode
+/frontend/.DS_Store
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# Backend folders
+/backend/node_modules
+/backend/build
+/backend/coverage
+/backend/.vscode
+/backend/.DS_STORE
+/backend/.env
+/backend/tmp
+
+
+.DS_STORE
