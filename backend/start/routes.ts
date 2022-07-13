@@ -21,9 +21,7 @@
 import Route from '@ioc:Adonis/Core/Route'
 import Application from '@ioc:Adonis/Core/Application'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
+Route.resource('test', 'testsController').apiOnly()
 
 Route.post('/file', async ({ request }) => {
   const uploadedFile = request.file('file_upload')
