@@ -11,7 +11,7 @@ function App() {
     const getAppState = async () => {
       try {
         setIsLoading(true);
-        const res = await fetch("http://localhost:3333/");
+        const res = await fetch("http://localhost:3333/test");
 
         const body = await res.json();
         console.log(body);
@@ -78,14 +78,13 @@ function App() {
                 <p>Size in bytes: {selectedFile.size}</p>
                 <p>
                   lastModifiedDate:{" "}
-                  {selectedFile.lastModifiedDate.toLocaleDateString()}
+                  {new Date(selectedFile.lastModified).toLocaleDateString()}
                 </p>
               </div>
             ) : (
               <p>Select a file to show details</p>
             )}
             <div>
-              <button onClick={handleSubmission}>Submit</button>
             </div>
             {uploadSuccess && <h2>Upload success!!</h2>}
             {uploadError && <h2>Upload err!!</h2>}
